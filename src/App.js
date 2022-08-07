@@ -1,23 +1,25 @@
-import React from 'react';
+import React, { Fragment } from 'react';
+import Footer from './Footer.js';
+import Form from './Form/Form.js';
+import Header from './Header.js';
 
+const Teste = () => {
+  const active = false;
+  if (active) {
+    return <p>Ativo</p>;
+  } else {
+    return null;
+  }
+};
 const App = () => {
-  function handleScroll(e) {
-    console.log(e);
-  }
-  window.addEventListener('scroll', handleScroll);
-
-  function handleClick(event) {
-    console.log(event);
-  }
   return (
-    <div style={{ height: '200vh' }}>
-      <button onClick={handleClick}>Clique</button>
+    <Fragment>
+      <Header />
+      <Teste />
+      <Form />
       <br />
-      <br />
-      <button onClick={(event) => alert(event.target.innerText)}>
-        Compre Agora
-      </button>
-    </div>
+      <Footer />
+    </Fragment>
   );
 };
 
