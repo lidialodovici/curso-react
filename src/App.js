@@ -1,24 +1,20 @@
 import React, { Fragment } from 'react';
-import Footer from './Footer.js';
-import Form from './Form/Form.js';
-import Header from './Header.js';
+import Header from './Header';
+import Home from './Home';
+import Produtos from './Produtos';
 
-const Teste = () => {
-  const active = false;
-  if (active) {
-    return <p>Ativo</p>;
-  } else {
-    return null;
-  }
-};
 const App = () => {
+  const { pathname } = window.location;
+  let Pagina = Home;
+  if (pathname === '/produtos') {
+    Pagina = Produtos;
+  } else {
+    Pagina = Home;
+  }
   return (
     <Fragment>
       <Header />
-      <Teste />
-      <Form />
-      <br />
-      <Footer />
+      <Pagina />
     </Fragment>
   );
 };
